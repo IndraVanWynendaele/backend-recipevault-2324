@@ -1,0 +1,22 @@
+const { tables } = require('..');
+
+module.exports = {
+  seed: async (knex) => {
+    // first delete all entries
+    await knex(tables.recipe).delete(); 
+    
+    // then add the fresh recipes
+    await knex(tables.recipe).insert([
+      {recipeId: 1, recipeName: 'Stuffed Bell Peppers with Minced Beef and Veggies', recipeDescription: 'Savor the delicious combination of bell peppers filled with seasoned minced beef and colorful veggies.', recipePictureUrl: 'https://i.pinimg.com/564x/20/dd/98/20dd98d752c6769f4b22ff3e0eeec867.jpg', recipeDuration: 30, recipeServings: 2, recipeCategory: 1, recipeDifficulty: '1', recipeInstructions: 'recipe one instructions', recipeUserId: 1}, 
+      {recipeId: 2, recipeName: 'Chicken Teriyaki with Rice and Green Beans', recipeDescription: 'Enjoy a savory and sweet dish with tender chicken teriyaki, fluffy rice, and crisp green beans.', recipePictureUrl: 'https://i.pinimg.com/564x/e0/89/78/e089786326df1b9125cfcc553bd92ab7.jpg', recipeDuration: 30, recipeServings: 2, recipeCategory: 1, recipeDifficulty: '2', recipeInstructions: 'recipe two instructions', recipeUserId: 2},
+      {recipeId: 3, recipeName: 'Panna Cotta with Crumble', recipeDescription: 'Indulge in the silky smoothness of vanilla panna cotta paired with a delightful crumble topping.', recipePictureUrl: 'https://i.pinimg.com/564x/ea/58/be/ea58be974c9a685d015a32ef85de10c3.jpg', recipeDuration: 30, recipeServings: 2, recipeCategory: 1, recipeDifficulty: '3', recipeInstructions: 'recipe three instructions', recipeUserId: 2},
+      {recipeId: 4, recipeName: 'Avocado Toast with Eggs and Tomatoes', recipeDescription: 'A delicious and nutritious avocado toast topped with perfectly cooked eggs and juicy tomatoes.  ', recipePictureUrl: 'https://i.pinimg.com/564x/8f/4a/97/8f4a97922125aa1f38f700e4786c5434.jpg', recipeDuration: 45, recipeServings: 4, recipeCategory: 2, recipeDifficulty: '2', recipeInstructions: 'recipe four instructions', recipeUserId: 3},
+      {recipeId: 5, recipeName: 'Peanut Butter Bliss with Banana and Strawberry', recipeDescription: 'A delicious and nutritious toast topped with creamy peanut butter, fresh strawberries, and banana slices.', recipePictureUrl: 'https://i.pinimg.com/564x/22/e1/20/22e120aa3471cfaedda72767e1b45cd1.jpg', recipeDuration: 60, recipeServings: 6, recipeCategory: 2, recipeDifficulty: '3', recipeInstructions: 'recipe five instructions', recipeUserId: 3},
+      {recipeId: 6, recipeName: 'Potato Wedges with Tzatziki', recipeDescription: 'Enjoy crispy potato wedges paired with creamy tzatziki for a delightful snack or side dish.', recipePictureUrl: 'https://i.pinimg.com/564x/7b/bd/f3/7bbdf3171dadfa200085d786200f9d8b.jpg', recipeDuration: 40, recipeServings: 3, recipeCategory: 1, recipeDifficulty: '2', recipeInstructions: 'recipe six instructions', recipeUserId: 2},
+      {recipeId: 7, recipeName: 'Pasta Pesto with Tomatoes and Mozzarella', recipeDescription: 'Indulge in a flavorful pasta dish with basil pesto, cherry tomatoes, and melted mozzarella.', recipePictureUrl: 'https://i.pinimg.com/564x/3f/50/23/3f5023dc99ec1d7f44f40dc762eb3b33.jpg', recipeDuration: 50, recipeServings: 4, recipeCategory: 3, recipeDifficulty: '3', recipeInstructions: 'recipe seven instructions', recipeUserId: 2},
+      {recipeId: 8, recipeName: 'Greek Salad', recipeDescription: 'A refreshing and classic Greek salad with a mix of fresh vegetables and feta cheese.', recipePictureUrl: 'https://i.pinimg.com/564x/aa/32/fc/aa32fc613952461e4e47869f0454774d.jpg', recipeDuration: 35, recipeServings: 2, recipeCategory: 1, recipeDifficulty: '1', recipeInstructions: 'recipe eight instructions', recipeUserId: 3},
+      {recipeId: 9, recipeName: 'Churos', recipeDescription: 'Crispy and delicious Spanish churros with a dusting of cinnamon and sugar.', recipePictureUrl: 'https://i.pinimg.com/564x/9a/3a/cd/9a3acda21761c46aa2931795bb814051.jpg', recipeDuration: 40, recipeServings: 3, recipeCategory: 2, recipeDifficulty: '2', recipeInstructions: 'recipe nine instructions', recipeUserId: 2},
+      {recipeId: 10, recipeName: 'Doughnuts with Pink Glaze', recipeDescription: 'Delight in soft and fluffy doughnuts with a sweet and vibrant pink glaze.', recipePictureUrl: 'https://i.pinimg.com/564x/56/a9/4b/56a94b0f229303e20a15994e48a28a73.jpg', recipeDuration: 55, recipeServings: 5, recipeCategory: 3, recipeDifficulty: '3', recipeInstructions: 'recipe ten instructions', recipeUserId: 2},
+    ]);
+  },
+};
